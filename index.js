@@ -5,7 +5,7 @@ function newTask(title, description) {
     complete: false,
 
     logState: function() {
-      console.log(console.log(`${task.title} has${task.complete ? " " : " not "}been completed`));
+      console.log(console.log(`${this.title} has${this.complete ? " " : " not "}been completed`));
     },
     markCompleted: function() {
       this.complete = true;
@@ -20,6 +20,6 @@ const task1 = newTask("Clean Cat Litter", "Take all the 💩 out of the litter b
 const task2 = newTask("Do Laundry", "😨");
 const tasks = [task1, task2];
 
-logTaskState(); // Clean Cat Litter has not been completed
-completeTask();
-logTaskState(); // Clean Cat Litter has been completed
+task1.logState(); // Clean Cat Litter has not been completed
+task1.markCompleted();
+task1.logState(); // Clean Cat Litter has been completed
